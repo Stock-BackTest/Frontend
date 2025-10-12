@@ -17,6 +17,7 @@ export default function PortfolioChart() {
       layout: {
         background: { type: ColorType.Solid, color: 'white' },
         textColor: '#333',
+        attributionLogo: true,  // TradingView 로고 표시 (라이센스 요구사항)
       },
       width: chartContainerRef.current.clientWidth,
       height: 500,
