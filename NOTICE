@@ -1,0 +1,23 @@
+Portfolio Backtest Application
+Copyright (c) 2025
+
+This project uses the following third-party software:
+
+================================================================================
+
+lightweight-charts
+https://github.com/tradingview/lightweight-charts
+Copyright (c) TradingView, Inc.
+Licensed under the Apache License, Version 2.0
+
+Chart creation is powered by TradingView Lightweight Charts library.
+Learn more at https://www.tradingview.com/
+
+================================================================================
+
+tslib (incorporated in lightweight-charts)
+https://github.com/Microsoft/tslib
+Copyright (c) Microsoft Corporation
+Licensed under the BSD Zero Clause License
+
+================================================================================
