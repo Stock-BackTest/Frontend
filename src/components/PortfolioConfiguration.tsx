@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './PortfolioConfiguration.module.css';
 import {
   TAB_SETTINGS,
@@ -18,6 +19,7 @@ import {
 } from '@/constants/portfolio';
 
 export default function PortfolioConfiguration() {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState<TabType>(TAB_SETTINGS);
   const [assetPercentages, setAssetPercentages] = useState<string[]>(
     Array(ASSETS_COUNT).fill('0')
@@ -48,6 +50,10 @@ export default function PortfolioConfiguration() {
       return `${styles.percentageSummary} ${styles.valid}`;
     }
     return `${styles.percentageSummary} ${styles.invalid}`;
+  };
+
+  const handleAnalyze = () => {
+    router.push('/results');
   };
 
   return (
@@ -142,7 +148,7 @@ export default function PortfolioConfiguration() {
           </div>
 
           <div className={styles.buttonGroup}>
-            <button className={styles.analyzeButton}>{BUTTON_TEXTS.ANALYZE}</button>
+            <button className={styles.analyzeButton} onClick={handleAnalyze}>{BUTTON_TEXTS.ANALYZE}</button>
             <button className={styles.clearButton}>{BUTTON_TEXTS.CLEAR}</button>
           </div>
         </div>
@@ -192,7 +198,7 @@ export default function PortfolioConfiguration() {
           </div>
 
           <div className={styles.buttonGroup}>
-            <button className={styles.analyzeButton}>{BUTTON_TEXTS.ANALYZE}</button>
+            <button className={styles.analyzeButton} onClick={handleAnalyze}>{BUTTON_TEXTS.ANALYZE}</button>
             <button className={styles.clearButton}>{BUTTON_TEXTS.CLEAR}</button>
           </div>
         </div>

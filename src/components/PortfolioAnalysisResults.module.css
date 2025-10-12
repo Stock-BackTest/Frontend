@@ -1,0 +1,65 @@
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.metricsSection {
+  margin-bottom: 60px;
+}
+
+.metricsTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.metricsTable th {
+  text-align: left;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.metricsTable td {
+  padding: 16px 20px;
+  font-size: 16px;
+  color: #000;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.metricsTable tbody tr:hover {
+  background: #f9f9f9;
+}
+
+.metricsTable th:first-child,
+.metricsTable td:first-child {
+  font-weight: 600;
+}
+
+.metricsTable th:nth-child(2),
+.metricsTable td:nth-child(2),
+.metricsTable th:nth-child(3),
+.metricsTable td:nth-child(3) {
+  text-align: right;
+}
+
+.chartSection {
+  margin-top: 60px;
+}
+
+.chartTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #000;
+}
