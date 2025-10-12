@@ -1,14 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { 
-  createChart, 
-  ColorType, 
-  IChartApi, 
-  LineData,
-  LineSeries
-} from 'lightweight-charts';
+import {useEffect, useRef} from 'react';
+import {ColorType, createChart, IChartApi, LineSeries} from 'lightweight-charts';
 import styles from './PortfolioChart.module.css';
+import {benchmarkChartData, portfolioChartData} from '@/data/samplePortfolioData';
 
 export default function PortfolioChart() {
   const chartContainerRef = useRef<HTMLDivElement>(null);
@@ -42,75 +37,13 @@ export default function PortfolioChart() {
 
     chartRef.current = chart;
 
-    // 샘플 포트폴리오 데이터 (파란색)
-    const portfolioData: LineData[] = [
-      { time: '2012-01-01', value: 10000 },
-      { time: '2012-06-01', value: 10500 },
-      { time: '2013-01-01', value: 11000 },
-      { time: '2013-06-01', value: 12000 },
-      { time: '2014-01-01', value: 13000 },
-      { time: '2014-06-01', value: 14000 },
-      { time: '2015-01-01', value: 15000 },
-      { time: '2015-06-01', value: 15500 },
-      { time: '2016-01-01', value: 15200 },
-      { time: '2016-06-01', value: 16000 },
-      { time: '2017-01-01', value: 16500 },
-      { time: '2017-06-01', value: 17000 },
-      { time: '2018-01-01', value: 18000 },
-      { time: '2018-06-01', value: 19000 },
-      { time: '2019-01-01', value: 19500 },
-      { time: '2019-06-01', value: 20000 },
-      { time: '2020-01-01', value: 20500 },
-      { time: '2020-06-01', value: 19000 },
-      { time: '2021-01-01', value: 22000 },
-      { time: '2021-06-01', value: 24000 },
-      { time: '2022-01-01', value: 26000 },
-      { time: '2022-06-01', value: 27000 },
-      { time: '2023-01-01', value: 25000 },
-      { time: '2023-06-01', value: 26000 },
-      { time: '2024-01-01', value: 28000 },
-      { time: '2024-06-01', value: 30000 },
-      { time: '2025-01-01', value: 32000 },
-    ];
-
-    // 벤치마크 데이터 (민트색)
-    const benchmarkData: LineData[] = [
-      { time: '2012-01-01', value: 10000 },
-      { time: '2012-06-01', value: 11000 },
-      { time: '2013-01-01', value: 12000 },
-      { time: '2013-06-01', value: 13500 },
-      { time: '2014-01-01', value: 14500 },
-      { time: '2014-06-01', value: 15500 },
-      { time: '2015-01-01', value: 17000 },
-      { time: '2015-06-01', value: 18000 },
-      { time: '2016-01-01', value: 17500 },
-      { time: '2016-06-01', value: 18500 },
-      { time: '2017-01-01', value: 19000 },
-      { time: '2017-06-01', value: 20000 },
-      { time: '2018-01-01', value: 22000 },
-      { time: '2018-06-01', value: 24000 },
-      { time: '2019-01-01', value: 25000 },
-      { time: '2019-06-01', value: 26000 },
-      { time: '2020-01-01', value: 27000 },
-      { time: '2020-06-01', value: 23000 },
-      { time: '2021-01-01', value: 30000 },
-      { time: '2021-06-01', value: 33000 },
-      { time: '2022-01-01', value: 38000 },
-      { time: '2022-06-01', value: 42000 },
-      { time: '2023-01-01', value: 36000 },
-      { time: '2023-06-01', value: 38000 },
-      { time: '2024-01-01', value: 45000 },
-      { time: '2024-06-01', value: 52000 },
-      { time: '2025-01-01', value: 55000 },
-    ];
-
     // 샘플 포트폴리오 라인 시리즈 (파란색)
     const portfolioSeries = chart.addSeries(LineSeries, {
       color: '#2563eb',
       lineWidth: 2,
       title: 'Sample Portfolio',
     });
-    portfolioSeries.setData(portfolioData);
+    portfolioSeries.setData(portfolioChartData);
 
     // 벤치마크 라인 시리즈 (민트색)
     const benchmarkSeries = chart.addSeries(LineSeries, {
@@ -118,7 +51,7 @@ export default function PortfolioChart() {
       lineWidth: 2,
       title: 'SPDR S&P 500 ETF',
     });
-    benchmarkSeries.setData(benchmarkData);
+    benchmarkSeries.setData(benchmarkChartData);
 
     // 차트의 시간 범위를 데이터에 맞게 조정
     chart.timeScale().fitContent();
