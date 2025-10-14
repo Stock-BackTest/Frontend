@@ -63,3 +63,26 @@
   margin-bottom: 20px;
   color: #000;
 }
+
+.buttonSection {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.newAnalysisButton {
+    padding: 16px 48px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: #16a34a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.newAnalysisButton:hover {
+    background: #15803d;
+}
