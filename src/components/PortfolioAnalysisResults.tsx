@@ -42,7 +42,7 @@ export default function PortfolioAnalysisResults() {
       </div>
       <div className={styles.buttonSection}>
         <button className={styles.newAnalysisButton} onClick={handleNewAnalysis}>
-          포트폴리오 재설정하기
+          재설정
         </button>
       </div>
     </div>
